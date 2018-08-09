@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExercicioWeb01.Models;
+using ExercicioWeb01.Repositorio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,9 @@ namespace ExercicioWeb01.Controllers
         // GET: Alunos
         public ActionResult Index()
         {
+            List<Alunos> alunos = new AlunoRepositorio().ObterTodos();
+            ViewBag.Alunos = alunos;
+            ViewBag.TituloPagina = "Alunos";
             return View();
         }
 
